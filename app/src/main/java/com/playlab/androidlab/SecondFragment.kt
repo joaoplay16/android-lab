@@ -7,12 +7,14 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.playlab.androidlab.databinding.FragmentSecondBinding
 
 /**
  * A simple [Fragment] subclass as the second destination in the navigation.
  */
 class SecondFragment : Fragment() {
+    val args: SecondFragmentArgs by navArgs()
 
     private var _binding: FragmentSecondBinding? = null
 
@@ -26,6 +28,10 @@ class SecondFragment : Fragment() {
     ): View? {
 
         _binding = FragmentSecondBinding.inflate(inflater, container, false)
+
+        val myNumber = args.number
+
+        binding.textView.text = myNumber.toString()
 
         binding.textView.setOnClickListener{
             findNavController().navigate(R.id.navigateToFirstFragment)

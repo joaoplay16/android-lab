@@ -28,7 +28,8 @@ class FirstFragment : Fragment() {
         _binding = FragmentFirstBinding.inflate(inflater, container, false)
 
         binding.textView.setOnClickListener{
-            findNavController().navigate(R.id.navigateToSecondFragment)
+            val action = FirstFragmentDirections.navigateToSecondFragment(22)
+            findNavController().navigate(action)
         }
 
         return binding.root
