@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        setSupportActionBar(binding.toolbar)
+        setSupportActionBar(binding.appBarDrawer.toolbar)
 
         navController = findNavController(R.id.fragment)
         drawerLayout = binding.drawerLayout
