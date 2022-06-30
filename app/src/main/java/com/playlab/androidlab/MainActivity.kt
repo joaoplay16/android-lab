@@ -29,10 +29,13 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        setSupportActionBar(binding.toolbar)
+
         navController = findNavController(R.id.fragment)
         drawerLayout = binding.drawerLayout
         binding.navigationView.setupWithNavController(navController)
         appBarConfiguration = AppBarConfiguration(navController.graph, drawerLayout)
+        setupActionBarWithNavController(navController, appBarConfiguration)
 
         listener = NavController.OnDestinationChangedListener { controller, destination, arguments ->
             if(destination.id == R.id.firstFragment){
