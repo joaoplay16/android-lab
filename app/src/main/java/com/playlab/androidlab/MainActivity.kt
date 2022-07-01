@@ -12,6 +12,7 @@ import android.view.Menu
 import android.view.MenuItem
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.NavController
+import androidx.navigation.ui.NavigationUI.setupWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.playlab.androidlab.databinding.ActivityMainBinding
 
@@ -37,6 +38,9 @@ class MainActivity : AppCompatActivity() {
         appBarConfiguration = AppBarConfiguration(navController.graph, drawerLayout)
         setupActionBarWithNavController(navController, appBarConfiguration)
 
+       binding.appBarDrawer.mainContent.bottomNavigation.setupWithNavController(navController)
+
+
         listener = NavController.OnDestinationChangedListener { controller, destination, arguments ->
             if(destination.id == R.id.firstFragment){
                 supportActionBar?.setBackgroundDrawable(ColorDrawable(getColor(R.color.black)))
@@ -44,6 +48,8 @@ class MainActivity : AppCompatActivity() {
                 supportActionBar?.setBackgroundDrawable(ColorDrawable(getColor(R.color.teal_700)))
             }
         }
+
+
     }
 
     override fun onResume() {

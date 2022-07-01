@@ -34,7 +34,7 @@ class SecondFragment : Fragment() {
         binding.textView.text = myNumber.toString()
 
         binding.textView.setOnClickListener{
-            findNavController().navigate(R.id.navigateToFirstFragment)
+            findNavController().navigate(R.id.action_secondFragment_to_thirdFragment)
 
         }
         return binding.root
