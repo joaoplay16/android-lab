@@ -12,6 +12,8 @@ import androidx.navigation.fragment.findNavController
 import com.playlab.androidlab.MainActivity
 import com.playlab.androidlab.R
 import com.playlab.androidlab.databinding.FragmentSplashBinding
+import kotlinx.coroutines.*
+import kotlin.coroutines.coroutineContext
 
 
 class SplashFragment : Fragment() {
@@ -25,13 +27,24 @@ class SplashFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = FragmentSplashBinding.inflate(inflater, container, false)
 
-        Handler().postDelayed({
+//        Handler().postDelayed({
+//            if(onBoardingFinished()){
+//                startActivity(Intent(activity, MainActivity::class.java))
+//            }else{
+//                findNavController().navigate(R.id.action_splashFragment2_to_viewPagerFragment)
+//            }
+//        }, 3000)
+
+        val scope = CoroutineScope(Dispatchers.Main)
+        scope.launch {
+            delay(3000)
             if(onBoardingFinished()){
                 startActivity(Intent(activity, MainActivity::class.java))
+                activity?.finish()
             }else{
                 findNavController().navigate(R.id.action_splashFragment2_to_viewPagerFragment)
             }
-        }, 3000)
+        }
 
         return binding.root
     }
