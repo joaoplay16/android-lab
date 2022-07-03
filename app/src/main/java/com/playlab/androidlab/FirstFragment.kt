@@ -32,6 +32,10 @@ class FirstFragment : Fragment() {
             findNavController().navigate(action)
         }
 
+        binding.buttonNextFf.setOnClickListener {
+            findNavController().navigate(R.id.navigateToSecondFragment)
+        }
+
         return binding.root
 
     }

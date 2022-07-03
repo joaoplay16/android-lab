@@ -22,6 +22,13 @@ class ThirdFragment : Fragment() {
         binding.textView.setOnClickListener {
             findNavController().navigate(R.id.action_thirdFragment_to_firstFragment)
         }
+
+        binding.buttonPrevTf.setOnClickListener {
+            findNavController().navigate(R.id.action_thirdFragment_to_secondFragment)
+        }
+        binding.buttonNextTf.setOnClickListener {
+            findNavController().navigate(R.id.action_thirdFragment_to_firstFragment)
+        }
         return binding.root
     }
 
