@@ -27,7 +27,7 @@ class ThirdFragment : Fragment() {
             findNavController().navigate(R.id.action_thirdFragment_to_secondFragment)
         }
         binding.buttonNextTf.setOnClickListener {
-            findNavController().navigate(R.id.action_thirdFragment_to_firstFragment)
+            findNavController().navigate(R.id.action_thirdFragment_to_fragmentA)
         }
         return binding.root
     }

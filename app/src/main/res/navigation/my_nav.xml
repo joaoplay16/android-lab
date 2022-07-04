@@ -57,5 +57,29 @@
             app:exitAnim="@anim/to_right"
             app:popEnterAnim="@anim/from_right"
             app:popExitAnim="@anim/to_left" />
+        <action
+            android:id="@+id/action_thirdFragment_to_fragmentA"
+            app:destination="@id/fragmentA" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentA"
+        android:name="com.playlab.androidlab.FragmentA"
+        android:label="fragment_a"
+        tools:layout="@layout/fragment_a" >
+        <action
+            android:id="@+id/action_fragmentA_to_fragmentB"
+            app:destination="@id/fragmentB" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentB"
+        android:name="com.playlab.androidlab.FragmentB"
+        android:label="fragment_b"
+        tools:layout="@layout/fragment_b" >
+        <action
+            android:id="@+id/action_fragmentB_to_fragmentA"
+            app:destination="@id/fragmentA" />
+        <argument
+            android:name="currentUser"
+            app:argType="com.playlab.androidlab.model.User" />
     </fragment>
 </navigation>
