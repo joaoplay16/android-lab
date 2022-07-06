@@ -36,6 +36,10 @@ class FirstFragment : Fragment() {
             findNavController().navigate(R.id.navigateToSecondFragment)
         }
 
+        binding.buttonOpenBottomSheet.setOnClickListener {
+            findNavController().navigate(R.id.action_firstFragment_to_bottomSheetFragment)
+        }
+
         return binding.root
 
     }
